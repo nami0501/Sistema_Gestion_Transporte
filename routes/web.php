@@ -18,6 +18,7 @@ use App\Http\Controllers\EstacionLineaController;
 use App\Http\Controllers\MantenimientoController;
 use App\Http\Controllers\MonitoreoController;
 use App\Http\Controllers\HorarioController;
+use App\Http\Controllers\UsuarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,19 +52,20 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/perfil', [DashboardController::class, 'perfil'])->name('perfil');
     Route::get('/configuracion', [DashboardController::class, 'configuracion'])->name('configuracion');
     
-    // Rutas para Administradores
-    Route::middleware('userrole:Administrador')->prefix('admin')->group(function () {
+    Route::prefix('admin')
+    ->middleware(CheckRole::class.':Administrador,Supervisor')  // Permite ambos roles
+    ->group(function () {
         Route::get('/panel', [AdminController::class, 'panelControl'])->name('admin.panel');
         
-        // Gestión de usuarios
-        Route::get('/usuarios', [AdminController::class, 'usuarios'])->name('usuarios.index');
-        Route::get('/usuarios/create', [AdminController::class, 'crearUsuario'])->name('usuarios.create');
-        Route::post('/usuarios', [AdminController::class, 'guardarUsuario'])->name('usuarios.store');
-        Route::get('/usuarios/{id}', [AdminController::class, 'verUsuario'])->name('usuarios.show');
-        Route::get('/usuarios/{id}/edit', [AdminController::class, 'editarUsuario'])->name('usuarios.edit');
-        Route::put('/usuarios/{id}', [AdminController::class, 'actualizarUsuario'])->name('usuarios.update');
-        Route::delete('/usuarios/{id}', [AdminController::class, 'eliminarUsuario'])->name('usuarios.destroy');
-        
+        // Rutas de gestión de usuarios
+        Route::get('/usuarios', [UsuarioController::class, 'index'])->name('usuarios.index');
+        Route::get('/usuarios/create', [UsuarioController::class, 'create'])->name('usuarios.create');
+        Route::post('/usuarios', [UsuarioController::class, 'store'])->name('usuarios.store');
+        Route::get('/usuarios/{id}', [UsuarioController::class, 'show'])->name('usuarios.show');
+        Route::get('/usuarios/{id}/edit', [UsuarioController::class, 'edit'])->name('usuarios.edit');
+        Route::put('/usuarios/{id}', [UsuarioController::class, 'update'])->name('usuarios.update');
+        Route::delete('/usuarios/{id}', [UsuarioController::class, 'destroy'])->name('usuarios.destroy');
+
         // Gestión de roles
         Route::get('/roles', [AdminController::class, 'roles'])->name('roles.index');
         Route::get('/roles/create', [AdminController::class, 'crearRol'])->name('roles.create');
