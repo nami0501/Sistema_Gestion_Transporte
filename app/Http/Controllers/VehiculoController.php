@@ -129,10 +129,10 @@ class VehiculoController extends Controller
         // Obtener las asignaciones recientes
         $asignaciones = $vehiculo->asignaciones;
         
-        // Obtener los mantenimientos recientes (ajusta esto según tu modelo)
+        // Obtener los mantenimientos recientes
         $mantenimientos = $vehiculo->mantenimientos()->orderBy('fecha_programada', 'desc')->limit(10)->get();
         
-        // Obtener los incidentes recientes (ajusta esto según tu modelo)
+        // Obtener los incidentes recientes a través de las asignaciones
         $incidentes = $vehiculo->incidentes()->orderBy('fecha_hora', 'desc')->limit(10)->get();
 
         return view('vehiculos.show', compact('vehiculo', 'ultimaPosicion', 'asignaciones', 'mantenimientos', 'incidentes'));

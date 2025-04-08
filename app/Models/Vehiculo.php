@@ -77,11 +77,26 @@ class Vehiculo extends Model
     }
 
     /**
-     * Obtiene los mantenimientos del vehículo.
+     * Obtiene todos los mantenimientos de este vehículo.
      */
     public function mantenimientos()
     {
         return $this->hasMany(Mantenimiento::class, 'id_vehiculo');
+    }
+
+    /**
+     * Obtiene todos los incidentes relacionados con este vehículo a través de sus asignaciones.
+     */
+    public function incidentes()
+    {
+        return $this->hasManyThrough(
+            Incidente::class,
+            Asignacion::class,
+            'id_vehiculo', // Clave foránea en asignaciones
+            'id_asignacion', // Clave foránea en incidentes
+            'id_vehiculo', // Clave local en vehiculos
+            'id_asignacion' // Clave local en asignaciones
+        );
     }
 
     /**
