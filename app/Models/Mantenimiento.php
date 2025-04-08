@@ -24,6 +24,13 @@ class Mantenimiento extends Model
     protected $primaryKey = 'id_mantenimiento';
 
     /**
+     * Indicar a Laravel que no use las columnas created_at y updated_at
+     * 
+     * @var bool
+     */
+    public $timestamps = false;
+
+    /**
      * Los atributos que son asignables en masa.
      *
      * @var array
@@ -37,7 +44,9 @@ class Mantenimiento extends Model
         'costo',
         'proveedor',
         'resultado',
-        'observaciones'
+        'observaciones',
+        'fecha_creacion',
+        'fecha_modificacion'
     ];
 
     /**
@@ -52,6 +61,23 @@ class Mantenimiento extends Model
         'fecha_creacion' => 'datetime',
         'fecha_modificacion' => 'datetime',
     ];
+
+    /**
+     * Configura eventos del modelo para mantener las fechas personalizadas
+     */
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($model) {
+            $model->fecha_creacion = now();
+            $model->fecha_modificacion = now();
+        });
+
+        static::updating(function ($model) {
+            $model->fecha_modificacion = now();
+        });
+    }
 
     /**
      * Obtiene el vehículo al que pertenece este mantenimiento.
