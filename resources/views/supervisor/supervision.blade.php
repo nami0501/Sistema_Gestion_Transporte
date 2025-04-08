@@ -263,11 +263,6 @@
                             </a>
                         </div>
                         <div class="col-lg-3 col-md-6 mb-4">
-                            <a href="{{ route('reportes.diario') }}" class="btn btn-info btn-block py-3">
-                                <i class="fas fa-file-alt mr-1"></i> Reporte Diario
-                            </a>
-                        </div>
-                        <div class="col-lg-3 col-md-6 mb-4">
                             <a href="{{ route('comunicaciones.index') }}" class="btn btn-success btn-block py-3">
                                 <i class="fas fa-bullhorn mr-1"></i> Comunicados
                             </a>

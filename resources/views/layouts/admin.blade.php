@@ -354,46 +354,6 @@
                         <i class="bi bi-exclamation-triangle"></i> Incidentes
                     </a>
                 </li>
-                
-                <li class="nav-item">
-                    <a href="{{ route('mantenimientos.index') }}" class="nav-link {{ request()->routeIs('mantenimientos.*') ? 'active' : '' }}">
-                        <i class="bi bi-tools"></i> Mantenimientos
-                    </a>
-                </li>
-                
-                <div class="nav-heading">Finanzas</div>
-                
-                <li class="nav-item">
-                    <a href="{{ route('tarifas.index') }}" class="nav-link {{ request()->routeIs('tarifas.*') ? 'active' : '' }}">
-                        <i class="bi bi-cash-coin"></i> Tarifas
-                    </a>
-                </li>
-                
-                <li class="nav-item">
-                    <a href="{{ route('tarjetas.index') }}" class="nav-link {{ request()->routeIs('tarjetas.*') ? 'active' : '' }}">
-                        <i class="bi bi-credit-card"></i> Tarjetas
-                    </a>
-                </li>
-                
-                <div class="nav-heading">Reportes</div>
-                
-                <li class="nav-item">
-                    <a href="{{ route('reportes.pasajeros') }}" class="nav-link {{ request()->routeIs('reportes.pasajeros') ? 'active' : '' }}">
-                        <i class="bi bi-people-fill"></i> Pasajeros
-                    </a>
-                </li>
-                
-                <li class="nav-item">
-                    <a href="{{ route('reportes.operaciones') }}" class="nav-link {{ request()->routeIs('reportes.operaciones') ? 'active' : '' }}">
-                        <i class="bi bi-graph-up"></i> Operaciones
-                    </a>
-                </li>
-                
-                <li class="nav-item">
-                    <a href="{{ route('reportes.finanzas') }}" class="nav-link {{ request()->routeIs('reportes.finanzas') ? 'active' : '' }}">
-                        <i class="bi bi-bar-chart-line"></i> Finanzas
-                    </a>
-                </li>
             </ul>
         </div>
     </nav>
