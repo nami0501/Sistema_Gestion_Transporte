@@ -201,9 +201,25 @@
                 </table>
             </div>
 
-            <!-- Paginación -->
+            <!-- Paginación personalizada -->
             <div class="d-flex justify-content-center mt-3">
-                {{ $vehiculos->appends(request()->query())->links() }}
+                <nav>
+                    <ul class="pagination">
+                        <li class="page-item {{ $vehiculos->currentPage() == 1 ? 'disabled' : '' }}">
+                            <a class="page-link" href="{{ $vehiculos->previousPageUrl() }}" tabindex="-1">Anterior</a>
+                        </li>
+                        
+                        @for ($i = 1; $i <= $vehiculos->lastPage(); $i++)
+                            <li class="page-item {{ $vehiculos->currentPage() == $i ? 'active' : '' }}">
+                                <a class="page-link" href="{{ $vehiculos->url($i) }}">{{ $i }}</a>
+                            </li>
+                        @endfor
+                        
+                        <li class="page-item {{ $vehiculos->currentPage() == $vehiculos->lastPage() ? 'disabled' : '' }}">
+                            <a class="page-link" href="{{ $vehiculos->nextPageUrl() }}">Siguiente</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>

@@ -181,10 +181,25 @@
                     </tbody>
                 </table>
             </div>
-
-            <!-- Paginación -->
+            <!-- Paginación personalizada -->
             <div class="d-flex justify-content-center mt-3">
-                {{ $lineas->appends(request()->query())->links() }}
+                <nav>
+                    <ul class="pagination">
+                        <li class="page-item {{ $lineas->currentPage() == 1 ? 'disabled' : '' }}">
+                            <a class="page-link" href="{{ $lineas->previousPageUrl() }}" tabindex="-1">Anterior</a>
+                        </li>
+                        
+                        @for ($i = 1; $i <= $lineas->lastPage(); $i++)
+                            <li class="page-item {{ $lineas->currentPage() == $i ? 'active' : '' }}">
+                                <a class="page-link" href="{{ $lineas->url($i) }}">{{ $i }}</a>
+                            </li>
+                        @endfor
+                        
+                        <li class="page-item {{ $lineas->currentPage() == $lineas->lastPage() ? 'disabled' : '' }}">
+                            <a class="page-link" href="{{ $lineas->nextPageUrl() }}">Siguiente</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>

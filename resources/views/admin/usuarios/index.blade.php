@@ -74,7 +74,23 @@
                             </tbody>
                         </table>
                         <div class="d-flex justify-content-center mt-3">
-                            {{ $usuarios->links() }}
+                            <nav>
+                                <ul class="pagination">
+                                    <li class="page-item {{ $usuarios->currentPage() == 1 ? 'disabled' : '' }}">
+                                        <a class="page-link" href="{{ $usuarios->previousPageUrl() }}" tabindex="-1">Anterior</a>
+                                    </li>
+                                    
+                                    @for ($i = 1; $i <= $usuarios->lastPage(); $i++)
+                                        <li class="page-item {{ $usuarios->currentPage() == $i ? 'active' : '' }}">
+                                            <a class="page-link" href="{{ $usuarios->url($i) }}">{{ $i }}</a>
+                                        </li>
+                                    @endfor
+                                    
+                                    <li class="page-item {{ $usuarios->currentPage() == $usuarios->lastPage() ? 'disabled' : '' }}">
+                                        <a class="page-link" href="{{ $usuarios->nextPageUrl() }}">Siguiente</a>
+                                    </li>
+                                </ul>
+                            </nav>
                         </div>
                         @else
                         <div class="text-center py-5">
