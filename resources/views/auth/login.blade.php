@@ -159,11 +159,27 @@
             }
         }
 
+        .alert-success {
+            background-color: rgba(40, 167, 69, 0.2);
+            color: #4cd964;
+            border: 1px solid rgba(40, 167, 69, 0.3);
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container login-container">
+        <!-- Colocar el mensaje aquí dentro del contenedor -->
+        @if(session('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert" id="successAlert">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+        
         <div class="row justify-content-center">
             <div class="col-lg-10">
                 <div class="card">
@@ -225,5 +241,18 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+    <script>
+    // Hacer que la alerta desaparezca automáticamente
+    document.addEventListener('DOMContentLoaded', function() {
+        var successAlert = document.getElementById('successAlert');
+        if (successAlert) {
+            setTimeout(function() {
+                var alert = bootstrap.Alert.getOrCreateInstance(successAlert);
+                alert.close();
+            }, 5000); // 5000 ms = 5 segundos
+        }
+    });
+</script>
 </body>
 </html>

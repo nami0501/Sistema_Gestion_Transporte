@@ -126,9 +126,9 @@ class AuthController extends Controller
             'estado' => 'Activo',
         ]);
 
-        Auth::login($usuario);
-
-        return redirect()->route('dashboard');
+        // En lugar de hacer login automáticamente, redirige al login con mensaje
+        return redirect()->route('login')
+            ->with('success', 'Registro exitoso. Por favor inicie sesión con sus credenciales.');
     }
 
     /**
