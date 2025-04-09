@@ -1,66 +1,63 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Sistema de Gestión y Monitoreo de Transporte
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Descripción
+Sistema web integral para la administración, asignación y monitoreo en tiempo real de flotas de transporte público. Esta plataforma permite gestionar de manera eficiente vehículos, rutas, conductores y proporciona capacidades avanzadas de monitoreo GPS para optimizar las operaciones de transporte.
+Características Principales
 
-## About Laravel
+1. Gestión de Vehículos
+Registro y mantenimiento completo de la flota vehicular
+Seguimiento de estado operativo y disponibilidad
+Historial de mantenimientos y asignaciones
+Filtros avanzados por estado, tipo y línea asignada
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+2. Gestión de Rutas
+Definición y optimización de líneas y recorridos
+Configuración de estaciones/paraderos con geolocalización
+Administración de horarios y frecuencias por línea
+Indicadores de rendimiento y puntualidad
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+3. Gestión de Conductores
+Registro completo de conductores con información de licencias
+Control de disponibilidad y asignación a vehículos y rutas
+Seguimiento de horas de trabajo y descanso
+Historial de desempeño y asignaciones
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+4. Sistema de Asignaciones
+Interfaz tipo "carrito" para asignación intuitiva de recursos
+Selección dinámica de conductores y vehículos disponibles
+Validación en tiempo real de compatibilidad de recursos
+Programación de turnos y horarios optimizados
 
-## Learning Laravel
+5. Monitoreo en Tiempo Real
+Seguimiento GPS de toda la flota en mapa interactivo
+Actualización en tiempo real de posición y estado
+Alertas automáticas para desviaciones o retrasos
+Comparación entre recorridos planificados y ejecutados
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Tecnologías Implementadas
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Backend: Laravel/PHP
+Frontend: JavaScript, HTML5, CSS3
+Base de datos: MySQL (o la que estés utilizando)
+Mapas: Leaflet/Google Maps API (o la que estés utilizando)
+Comunicación en tiempo real: AJAX/fetch/WebSockets
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Roles de Usuario
 
-## Laravel Sponsors
+Administrador: Acceso completo a todas las funcionalidades y configuración del sistema
+Supervisor: Gestión de asignaciones, monitoreo y reportes
+Operador: Monitoreo en tiempo real y gestión de incidentes
+Conductor: Visualización de asignaciones y reporte de incidentes
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Beneficios
 
-### Premium Partners
+Optimización de recursos de transporte
+Mejora en la puntualidad y calidad del servicio
+Respuesta rápida ante incidentes
+Toma de decisiones basada en datos
+Reducción de costos operativos
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
 
-## Contributing
+Alumnos:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Leslie Karina Virto Cueva.
