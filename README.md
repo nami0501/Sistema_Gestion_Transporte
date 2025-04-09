@@ -60,6 +60,22 @@ Respuesta rápida ante incidentes
 Toma de decisiones basada en datos
 Reducción de costos operativos
 
+requisitos
+node js 18>= validar con node -v
+php
+instalar composer : https://getcomposer.org/
+pasos iniciales para la instalacion
+crear archivo .env con el contenido de .env.example
+configurar base de datos psql en .env (nombre bd, usuario y clave)
+ejecutar: npm install
+ejecutar: composer install
+ejecutar: php artisan key:generate
+ejecutar: php artisan migrate
+ejecutar: php artisan db:seed
+pasos para ejecutar el proyecto ( en paralelo ambas terminales)
+ejecutar en una terminal: npm run dev
+ejecutar en una terminal: php artisan serve
+
 
 Alumna:
 
