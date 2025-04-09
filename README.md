@@ -1,5 +1,8 @@
 Sistema de Gestión y Monitoreo de Transporte
 
+![image](https://github.com/user-attachments/assets/2ee4120e-7530-499c-b8aa-cbad03435682)
+
+
 Descripción
 Sistema web integral para la administración, asignación y monitoreo en tiempo real de flotas de transporte público. Esta plataforma permite gestionar de manera eficiente vehículos, rutas, conductores y proporciona capacidades avanzadas de monitoreo GPS para optimizar las operaciones de transporte.
 Características Principales
@@ -58,6 +61,6 @@ Toma de decisiones basada en datos
 Reducción de costos operativos
 
 
-Alumnos:
+Alumna:
 
 Leslie Karina Virto Cueva.
