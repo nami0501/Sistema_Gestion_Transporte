@@ -1,4 +1,3 @@
-<!-- resources/views/admin/usuarios/edit.blade.php -->
 @extends('layouts.admin')
 
 @section('title', 'Editar Usuario')
